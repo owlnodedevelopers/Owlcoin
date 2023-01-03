@@ -67,12 +67,12 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
  */
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256S("0000014d005f55b0585a76dfe9336f63220f677cfeb730f87f786f79968ff66e"))
+    (0, uint256S("000007ab9a2f9f6e6a2ffe659d6b43033c6c2653517f0166ca562d86d1c84c03"))
     ;
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1632372335, // * UNIX timestamp of last checkpoint block
+    1672709519, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     0        // * estimated number of transactions per day after checkpoint
@@ -105,51 +105,10 @@ public:
         networkID = CBaseChainParams::MAIN;
         strNetworkID = "main";
 
-        uint32_t nGenesisTime = 1672709519; // 2021-02-03T13:51:41+00:00
-
-                  arith_uint256 test;
-                  bool fNegative;
-                  bool fOverflow;
-                  test.SetCompact(0x1e0ffff0, &fNegative, &fOverflow);
-                  std::cout << "Test threshold: " << test.GetHex() << "\n\n";
-
-                  int genesisNonce = 0;
-                  uint256 TempHashHolding = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
-                  uint256 BestBlockHash = uint256S("0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-                  for (int i=0;i<40000000;i++) {
-                      genesis = CreateGenesisBlock(nGenesisTime, i, 0x1e0ffff0, 1, 0 * COIN);
-                      //genesis.hashPrevBlock = TempHashHolding;
-                      consensus.hashGenesisBlock = genesis.GetHash();
-
-                      arith_uint256 BestBlockHashArith = UintToArith256(BestBlockHash);
-                      if (UintToArith256(consensus.hashGenesisBlock) < BestBlockHashArith) {
-                          BestBlockHash = consensus.hashGenesisBlock;
-                          std::cout << BestBlockHash.GetHex() << " Nonce: " << i << "\n";
-                          std::cout << "   PrevBlockHash: " << genesis.hashPrevBlock.GetHex() << "\n";
-                      }
-
-                      TempHashHolding = consensus.hashGenesisBlock;
-
-                      if (BestBlockHashArith < test) {
-                          genesisNonce = i - 1;
-                          break;
-                      }
-                      //std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
-                  }
-                   std::cout << "\n";
-                   std::cout << "\n";
-                   std::cout << "\n";
-
-                   std::cout << "hashGenesisBlock to 0x" << BestBlockHash.GetHex() << std::endl;
-                   std::cout << "Genesis Nonce to " << genesisNonce << std::endl;
-                   std::cout << "Genesis Merkle 0x" << genesis.hashMerkleRoot.GetHex() << std::endl;
-
-                 exit(0);
-
-        genesis = CreateGenesisBlock(1672709519, 3336943, 0x1e0ffff0, 1, 0 * COIN);
+        genesis = CreateGenesisBlock(1672709519, 2856176, 0x1e0ffff0, 1, 0 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000014d005f55b0585a76dfe9336f63220f677cfeb730f87f786f79968ff66e"));
-        assert(genesis.hashMerkleRoot == uint256S("0x6632dbf21064b2a364d4f6c4cc532a602fd488524d02bf9f82b35ce4af1ed8ed"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000007ab9a2f9f6e6a2ffe659d6b43033c6c2653517f0166ca562d86d1c84c03"));
+        assert(genesis.hashMerkleRoot == uint256S("0xdc37c173277b6f846500862248b8f65cba9a2f9a541c0ee0d999a8658e122434"));
 
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.powLimit   = ~UINT256_ZERO >> 20;   // Owlcoin starting difficulty is 1 / 2^12
