@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=Owlcoin
+Comment=Owlcoin P2P Cryptocurrency
+Comment[fr]=Owlcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Owlcoin, eşten eşe kriptografik sanal para birimi
+Exec=owlcoin-qt %u
+Terminal=false
+Type=Application
+Icon=owlcoin128
+MimeType=x-scheme-handler/owlcoin;
+Categories=Office;Finance;
+StartupWMClass=Owlcoin-qt

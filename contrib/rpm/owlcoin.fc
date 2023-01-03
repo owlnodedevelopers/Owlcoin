@@ -1,0 +1,8 @@
+/usr/bin/owlcoin-cli		--	gen_context(system_u:object_r:owlcoin_exec_t,s0)
+/usr/sbin/owlcoind		--	gen_context(system_u:object_r:owlcoin_exec_t,s0)
+/usr/lib(64)?/owlcoin/owlcoind		--	gen_context(system_u:object_r:owlcoin_exec_t,s0)
+
+/etc/owlcoin(/.*)?		gen_context(system_u:object_r:owlcoin_conf_t,s0)
+/var/lib/owlcoin(/.*)?		gen_context(system_u:object_r:owlcoin_var_lib_t,s0)
+
+(/var)?/run/owlcoind(/.*)?   gen_context(system_u:object_r:owlcoin_var_run_t,s0)

@@ -1,0 +1,6 @@
+usr/local/bin/owlcoin-qt usr/bin
+share/pixmaps/owlcoin32.xpm usr/share/pixmaps
+share/pixmaps/owlcoin16.xpm usr/share/pixmaps
+share/pixmaps/owlcoin128.png usr/share/pixmaps
+debian/owlcoin-qt.desktop usr/share/applications
+debian/owlcoin-qt.protocol usr/share/kde4/services/

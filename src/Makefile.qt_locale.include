@@ -1,0 +1,14 @@
+QT_TS = \
+  qt/locale/owlcoin_de.ts \
+  qt/locale/owlcoin_en.ts \
+  qt/locale/owlcoin_en_US.ts \
+  qt/locale/owlcoin_es.ts \
+  qt/locale/owlcoin_fr_FR.ts \
+  qt/locale/owlcoin_hr_HR.ts \
+  qt/locale/owlcoin_it.ts \
+  qt/locale/owlcoin_ko_KR.ts \
+  qt/locale/owlcoin_nl.ts \
+  qt/locale/owlcoin_pl.ts \
+  qt/locale/owlcoin_ru.ts \
+  qt/locale/owlcoin_tr.ts \
+  qt/locale/owlcoin_zh_CN.ts

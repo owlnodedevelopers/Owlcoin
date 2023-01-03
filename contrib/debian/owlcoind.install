@@ -1,0 +1,3 @@
+usr/local/bin/owlcoind usr/bin
+usr/local/bin/owlcoin-cli usr/bin
+debian/examples/owlcoin.conf etc/owlcoin
