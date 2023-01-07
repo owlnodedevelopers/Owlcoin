@@ -9,6 +9,6 @@ index 20bfd36..93729fa 100644
 -    defined(__AARCH64EL__)
 +    defined(__AARCH64EL__) || defined(__aarch64__) || \
 +    defined(__riscv)
- #define DOUBLE_CONVERSION_OWLCECT_DOUBLE_OPERATIONS 1
+ #define DOUBLE_CONVERSION_CORRECT_DOUBLE_OPERATIONS 1
  #elif defined(_M_IX86) || defined(__i386__) || defined(__i386)
  #if defined(_WIN32)
